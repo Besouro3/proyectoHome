@@ -29,10 +29,10 @@ export default function Login() {
           <div className="bg-white/15 inline-flex p-3 rounded-2xl mb-4">
             <LogIn size={32} className="text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-white">Dashboard RRHH</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white">Dashboard RRHH</h1>
           <p className="text-brand-200 mt-2">Inicia sesión para continuar</p>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-5">
           <div>
             <label className="block text-sm font-medium text-text-primary mb-1.5">Email</label>
             <input

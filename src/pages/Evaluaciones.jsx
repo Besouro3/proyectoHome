@@ -59,9 +59,9 @@ export default function Evaluaciones() {
   return (
     <PageWrapper>
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-text-primary">Evaluaciones de Desempeño</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Evaluaciones de Desempeño</h2>
           <p className="text-text-secondary text-sm">Evaluaciones trimestrales — <span className="font-medium text-brand-600">{sede}</span></p>
         </div>
         <ExportButton data={evalFiltradas} filename={`evaluaciones_${sede.replace(/\s+/g, '_')}`} />

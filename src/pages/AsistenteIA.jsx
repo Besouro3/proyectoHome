@@ -67,7 +67,7 @@ export default function AsistenteIA() {
     <PageWrapper>
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-text-primary">Asistente IA</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Asistente IA</h2>
         <p className="text-text-secondary text-sm">Consultas de RRHH — <span className="font-medium text-brand-600">{sede}</span> (simulado)</p>
       </div>
 
@@ -87,7 +87,7 @@ export default function AsistenteIA() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-surface-card rounded-xl border border-border shadow-sm flex flex-col h-[600px]">
+        <div className="lg:col-span-2 bg-surface-card rounded-xl border border-border shadow-sm flex flex-col h-[50vh] sm:h-[600px]">
           <div className="px-5 py-4 border-b border-border flex items-center gap-2">
             <Bot size={20} className="text-brand-600" />
             <h3 className="text-base font-semibold">Chat del Asistente</h3>

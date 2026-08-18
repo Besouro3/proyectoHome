@@ -59,9 +59,9 @@ export default function BusquedaGlobal({ isOpen, onClose }) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[10vh]">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[5vh] sm:pt-[10vh]">
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm modal-backdrop" onClick={onClose} />
-      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-border dark:border-gray-600 w-full max-w-lg mx-4 overflow-hidden modal-content">
+      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-border dark:border-gray-600 w-full max-w-lg mx-3 sm:mx-4 overflow-hidden modal-content">
         <div className="flex items-center gap-3 px-4 py-3 border-b border-border dark:border-gray-600">
           <Search size={18} className="text-text-secondary dark:text-gray-400" />
           <input
@@ -105,7 +105,7 @@ export default function BusquedaGlobal({ isOpen, onClose }) {
           )}
         </div>
 
-        <div className="px-4 py-2 border-t border-border dark:border-gray-600 text-xs text-text-secondary dark:text-gray-500 flex items-center gap-2">
+        <div className="px-4 py-2 border-t border-border dark:border-gray-600 text-xs text-text-secondary dark:text-gray-500 items-center gap-2 hidden sm:flex">
           <FileText size={12} />
           <span>Presiona <kbd className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-xs">Enter</kbd> para buscar · <kbd className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-xs">Esc</kbd> para cerrar</span>
         </div>

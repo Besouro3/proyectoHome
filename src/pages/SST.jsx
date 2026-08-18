@@ -40,7 +40,7 @@ export default function SST() {
     <PageWrapper>
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-text-primary">Seguridad y Salud en el Trabajo</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Seguridad y Salud en el Trabajo</h2>
         <p className="text-text-secondary text-sm">Incidentes, auditoría y cumplimiento — <span className="font-medium text-brand-600">{sede}</span></p>
       </div>
 
@@ -98,8 +98,8 @@ export default function SST() {
             {incidentes.length > 0 ? incidentes.map(inc => (
               <div key={inc.id} className="px-5 py-4 hover:bg-brand-50/30 transition-colors">
                 <div className="flex items-start justify-between mb-1">
-                  <div>
-                    <span className="font-medium text-sm">{inc.empleado}</span>
+                  <div className="min-w-0 overflow-hidden">
+                    <span className="font-medium text-sm truncate">{inc.empleado}</span>
                     <span className="mx-2 text-text-secondary">·</span>
                     <span className="text-sm text-text-secondary">{inc.tipo}</span>
                   </div>

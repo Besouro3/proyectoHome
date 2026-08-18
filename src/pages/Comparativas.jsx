@@ -35,7 +35,7 @@ export default function Comparativas() {
     <PageWrapper>
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-text-primary">Comparativas</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Comparativas</h2>
         <p className="text-text-secondary text-sm">
           Tu sede: <span className="font-medium text-brand-600">{sede}</span> vs las demás
         </p>
@@ -47,12 +47,12 @@ export default function Comparativas() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-brand-50 text-brand-700">
-                <th className="text-left px-4 py-3 font-semibold">Sede</th>
-                <th className="text-center px-4 py-3 font-semibold">Colaboradores</th>
-                <th className="text-center px-4 py-3 font-semibold">Rotación (%)</th>
-                <th className="text-center px-4 py-3 font-semibold">Capacitaciones</th>
-                <th className="text-center px-4 py-3 font-semibold">Satisfacción</th>
-                <th className="text-center px-4 py-3 font-semibold">Ausentismo (%)</th>
+                <th className="text-left px-3 sm:px-4 py-3 font-semibold">Sede</th>
+                <th className="text-center px-3 sm:px-4 py-3 font-semibold hidden sm:table-cell">Colaboradores</th>
+                <th className="text-center px-3 sm:px-4 py-3 font-semibold">Rotación</th>
+                <th className="text-center px-3 sm:px-4 py-3 font-semibold hidden md:table-cell">Capacitaciones</th>
+                <th className="text-center px-3 sm:px-4 py-3 font-semibold">Satisfacción</th>
+                <th className="text-center px-3 sm:px-4 py-3 font-semibold hidden lg:table-cell">Ausentismo</th>
               </tr>
             </thead>
             <tbody>
@@ -62,27 +62,27 @@ export default function Comparativas() {
                   <tr key={i} className={`border-t border-border transition-colors ${
                     esMiSede ? 'bg-brand-50/70 font-semibold' : 'hover:bg-brand-50/30'
                   }`}>
-                    <td className="px-4 py-3">
+                    <td className="px-3 sm:px-4 py-3">
                       <div className="flex items-center gap-2">
                         {esMiSede && <div className="w-2 h-2 rounded-full bg-brand-500" />}
-                        <span>{s.sede}</span>
+                        <span className="text-xs sm:text-sm">{s.sede}</span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-center">{s.colaboradores}</td>
-                    <td className="px-4 py-3 text-center">{s.rotacion}%</td>
-                    <td className="px-4 py-3 text-center">{s.capacitaciones}</td>
-                    <td className="px-4 py-3 text-center">{s.satisfaccion}</td>
-                    <td className="px-4 py-3 text-center">{s.ausentismo}%</td>
+                    <td className="px-3 sm:px-4 py-3 text-center hidden sm:table-cell">{s.colaboradores}</td>
+                    <td className="px-3 sm:px-4 py-3 text-center">{s.rotacion}%</td>
+                    <td className="px-3 sm:px-4 py-3 text-center hidden md:table-cell">{s.capacitaciones}</td>
+                    <td className="px-3 sm:px-4 py-3 text-center">{s.satisfaccion}</td>
+                    <td className="px-3 sm:px-4 py-3 text-center hidden lg:table-cell">{s.ausentismo}%</td>
                   </tr>
                 )
               })}
               <tr className="border-t-2 border-brand-200 bg-brand-50/50 font-semibold">
-                <td className="px-4 py-3">Promedio General</td>
-                <td className="px-4 py-3 text-center">{promedioGeneral.colaboradores}</td>
-                <td className="px-4 py-3 text-center">{promedioGeneral.rotacion}%</td>
-                <td className="px-4 py-3 text-center">{promedioGeneral.capacitaciones}</td>
-                <td className="px-4 py-3 text-center">{promedioGeneral.satisfaccion}</td>
-                <td className="px-4 py-3 text-center">{promedioGeneral.ausentismo}%</td>
+                <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm">Promedio General</td>
+                <td className="px-3 sm:px-4 py-3 text-center hidden sm:table-cell">{promedioGeneral.colaboradores}</td>
+                <td className="px-3 sm:px-4 py-3 text-center">{promedioGeneral.rotacion}%</td>
+                <td className="px-3 sm:px-4 py-3 text-center hidden md:table-cell">{promedioGeneral.capacitaciones}</td>
+                <td className="px-3 sm:px-4 py-3 text-center">{promedioGeneral.satisfaccion}</td>
+                <td className="px-3 sm:px-4 py-3 text-center hidden lg:table-cell">{promedioGeneral.ausentismo}%</td>
               </tr>
             </tbody>
           </table>

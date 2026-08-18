@@ -42,15 +42,15 @@ export default function Colaboradores() {
   return (
     <PageWrapper>
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-text-primary">Colaboradores</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Colaboradores</h2>
           <p className="text-text-secondary text-sm">Personal de <span className="font-medium text-brand-600">{sede}</span> ({filtrados.length} resultados)</p>
         </div>
         <ExportButton data={filtrados} filename={`colaboradores_${sede.replace(/\s+/g, '_')}`} />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="bg-surface-card rounded-xl border border-border p-4 shadow-sm">
           <h3 className="text-sm font-semibold mb-3">Por Cargo</h3>
           <ResponsiveContainer width="100%" height={180}>
@@ -116,7 +116,7 @@ export default function Colaboradores() {
             <thead>
               <tr className="bg-brand-50 text-brand-700">
                 <th className="text-left px-4 py-3 font-semibold">Nombre</th>
-                <th className="text-left px-4 py-3 font-semibold">Cargo</th>
+                <th className="text-left px-4 py-3 font-semibold hidden sm:table-cell">Cargo</th>
                 <th className="text-left px-4 py-3 font-semibold hidden md:table-cell">Depto</th>
                 <th className="text-left px-4 py-3 font-semibold">Antigüedad</th>
                 <th className="text-left px-4 py-3 font-semibold">Estado</th>
@@ -127,7 +127,7 @@ export default function Colaboradores() {
               {filtrados.map((c, i) => (
                 <tr key={c.id} className={`border-t border-border hover:bg-brand-50/30 transition-colors animate-stagger-row stagger-${Math.min(i + 1, 8)}`}>
                   <td className="px-4 py-3 font-medium">{c.nombre}</td>
-                  <td className="px-4 py-3 text-text-secondary">{c.cargo}</td>
+                  <td className="px-4 py-3 text-text-secondary hidden sm:table-cell">{c.cargo}</td>
                   <td className="px-4 py-3 text-text-secondary hidden md:table-cell">{c.departamento}</td>
                   <td className="px-4 py-3">{c.antiguedad} {c.antiguedad === 1 ? 'año' : 'años'}</td>
                   <td className="px-4 py-3"><span className={estadoBadge(c.estado)}>{c.estado}</span></td>

@@ -41,9 +41,9 @@ export default function Capacitacion() {
   return (
     <PageWrapper>
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-text-primary">Capacitación</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Capacitación</h2>
           <p className="text-text-secondary text-sm">Programa de capacitación — <span className="font-medium text-brand-600">{sede}</span></p>
         </div>
         <ExportButton data={capacitaciones} filename={`capacitaciones_${sede.replace(/\s+/g, '_')}`} />
@@ -104,9 +104,9 @@ export default function Capacitacion() {
             <thead>
               <tr className="bg-brand-50 text-brand-700">
                 <th className="text-left px-4 py-3 font-semibold">Capacitación</th>
-                <th className="text-left px-4 py-3 font-semibold">Fecha</th>
+                <th className="text-left px-4 py-3 font-semibold hidden sm:table-cell">Fecha</th>
                 <th className="text-left px-4 py-3 font-semibold">Horas</th>
-                <th className="text-left px-4 py-3 font-semibold">Participantes</th>
+                <th className="text-left px-4 py-3 font-semibold hidden md:table-cell">Participantes</th>
                 <th className="text-left px-4 py-3 font-semibold">Estado</th>
               </tr>
             </thead>
@@ -115,11 +115,11 @@ export default function Capacitacion() {
                 <tr key={c.id} className={`border-t border-border hover:bg-brand-50/30 transition-colors animate-stagger-row stagger-${Math.min(i + 1, 8)}`}>
                   <td className="px-4 py-3">
                     <div className="font-medium">{c.nombre}</div>
-                    <div className="text-xs text-text-secondary">{c.instructor}</div>
+                    <div className="text-xs text-text-secondary hidden sm:block">{c.instructor}</div>
                   </td>
-                  <td className="px-4 py-3 text-text-secondary">{c.fecha}</td>
+                  <td className="px-4 py-3 text-text-secondary hidden sm:table-cell">{c.fecha}</td>
                   <td className="px-4 py-3">{c.duracion}h</td>
-                  <td className="px-4 py-3">{c.participantes > 0 ? `${c.aprobados}/${c.participantes}` : '—'}</td>
+                  <td className="px-4 py-3 hidden md:table-cell">{c.participantes > 0 ? `${c.aprobados}/${c.participantes}` : '—'}</td>
                   <td className="px-4 py-3"><span className={estadoBadge(c.estado)}>{c.estado}</span></td>
                 </tr>
               ))}

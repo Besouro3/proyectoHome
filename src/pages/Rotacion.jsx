@@ -23,7 +23,7 @@ export default function Rotacion() {
     <PageWrapper>
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-text-primary">Rotación de Personal</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Rotación de Personal</h2>
         <p className="text-text-secondary text-sm">Análisis de ingresos y salidas — <span className="font-medium text-brand-600">{sede}</span></p>
       </div>
 
