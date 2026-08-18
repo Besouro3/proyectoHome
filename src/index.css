@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #E3F2FD;
+  --color-brand-100: #BBDEFB;
+  --color-brand-200: #90CAF9;
+  --color-brand-300: #64B5F6;
+  --color-brand-400: #42A5F5;
+  --color-brand-500: #2196F3;
+  --color-brand-600: #1976D2;
+  --color-brand-700: #0070B9;
+  --color-brand-800: #0056A0;
+  --color-brand-900: #002B63;
+
+  --color-success-50: #F0FFF4;
+  --color-success-100: #C6F6D5;
+  --color-success-200: #9AE6B4;
+  --color-success-300: #68D391;
+  --color-success-400: #48BB78;
+  --color-success-500: #38A169;
+  --color-success-600: #2F855A;
+  --color-success-700: #276749;
+
+  --color-danger-50: #FFF5F5;
+  --color-danger-100: #FED7D7;
+  --color-danger-200: #FEB2B2;
+  --color-danger-300: #FC8181;
+  --color-danger-400: #F56565;
+  --color-danger-500: #E53E3E;
+  --color-danger-600: #D32F2F;
+  --color-danger-700: #9B2C2C;
+
+  --color-warning-50: #FFFFF0;
+  --color-warning-100: #FEFCBF;
+  --color-warning-200: #FAF089;
+  --color-warning-300: #F6E05E;
+  --color-warning-400: #ECC94B;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #B7791F;
+  --color-warning-700: #975A16;
+
+  --color-surface: #FFFFFF;
+  --color-surface-card: #FFFFFF;
+  --color-text-primary: #000000;
+  --color-text-secondary: #6B7280;
+  --color-border: #E5E7EB;
+}
+
+.dark {
+  --color-surface: #0A0E13;
+  --color-surface-card: #111827;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  --color-border: #1F2937;
+
+  --color-brand-50: #082B5E;
+  --color-brand-100: #0F3A7D;
+  --color-brand-200: #A4C7FD;
+  --color-brand-300: #7BA8FB;
+  --color-brand-400: #5CA5FF;
+  --color-brand-500: #7BA8FB;
+  --color-brand-600: #A4C7FD;
+  --color-brand-700: #082B5E;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dark .bg-surface { background-color: #0A0E13 !important; }
+.dark .bg-surface-card { background-color: #111827 !important; }
+.dark .bg-white { background-color: #111827 !important; }
+.dark .bg-gray-50 { background-color: #111827 !important; }
+
+.dark .bg-brand-50 { background-color: rgba(8, 43, 94, 0.25) !important; }
+.dark .bg-success-50 { background-color: rgba(134, 239, 172, 0.1) !important; }
+.dark .bg-danger-50 { background-color: rgba(252, 165, 165, 0.1) !important; }
+.dark .bg-warning-50 { background-color: rgba(252, 211, 77, 0.1) !important; }
+.dark .bg-brand-50\/70 { background-color: rgba(8, 43, 94, 0.15) !important; }
+
+.dark .border-border { border-color: #1F2937 !important; }
+.dark .border-brand-200 { border-color: rgba(123, 168, 251, 0.3) !important; }
+.dark .border-brand-400 { border-color: #7BA8FB !important; }
+
+.dark .text-text-primary { color: #FFFFFF !important; }
+.dark .text-text-secondary { color: #9CA3AF !important; }
+.dark .text-brand-200 { color: #A4C7FD !important; }
+.dark .text-brand-600 { color: #7BA8FB !important; }
+.dark .text-brand-700 { color: #A4C7FD !important; }
+.dark .text-success-600 { color: #86EFAC !important; }
+.dark .text-danger-600 { color: #FCA5A5 !important; }
+.dark .text-warning-600 { color: #FCD34D !important; }
+
+.dark select { background-color: #111827 !important; color: #FFFFFF !important; border-color: #1F2937 !important; }
+.dark input { background-color: #111827 !important; color: #FFFFFF !important; border-color: #1F2937 !important; }
+.dark input::placeholder { color: #6B7280 !important; }
+
+.dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+.dark .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); }
+.dark .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
+
+.dark .hover\:bg-brand-50\/30:hover { background-color: rgba(8, 43, 94, 0.25) !important; }
+.dark .hover\:bg-gray-50:hover { background-color: #1a2332 !important; }
+.dark .hover\:bg-gray-100:hover { background-color: #1a2332 !important; }
+.dark .divide-border > :not([hidden]) ~ :not([hidden]) { border-color: #1F2937 !important; }
+
+.bg-brand-50.text-brand-600 { 
+  background-color: #0070B9 !important;
+  color: #FFFFFF !important;
+}
+
+.bg-brand-50.text-brand-600:hover { 
+  background-color: #0056A0 !important;
+}
+
+.dark .bg-brand-50.text-brand-600 { 
+  background-color: rgba(2, 43, 99, 0.4) !important;
+  color: #64B5F6 !important;
+}
+
+.dark .bg-brand-50.text-brand-600:hover { 
+  background-color: rgba(2, 43, 99, 0.6) !important;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes staggerRow {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s ease-out both;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s ease-out both;
+}
+
+.animate-stagger-row {
+  animation: staggerRow 0.3s ease-out both;
+}
+
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 40ms; }
+.stagger-3 { animation-delay: 80ms; }
+.stagger-4 { animation-delay: 120ms; }
+.stagger-5 { animation-delay: 160ms; }
+.stagger-6 { animation-delay: 200ms; }
+.stagger-7 { animation-delay: 240ms; }
+.stagger-8 { animation-delay: 280ms; }
+
+.modal-backdrop {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+.modal-content {
+  animation: slideDown 0.25s ease-out both;
+}
+
+.dark *,
+.dark *::before,
+.dark *::after {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
