@@ -4,6 +4,9 @@ import { SedeProvider } from './context/SedeContext'
 import { ThemeProvider } from './context/ThemeContext'
 import Layout from './components/Layout'
 import Login from './pages/Login'
+import Register from './pages/Register'
+import ConfirmEmail from './pages/ConfirmEmail'
+import SetupTotp from './pages/SetupTotp'
 import Resumen from './pages/Resumen'
 import Colaboradores from './pages/Colaboradores'
 import Rotacion from './pages/Rotacion'
@@ -29,6 +32,9 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/confirm-email" element={<ConfirmEmail />} />
+              <Route path="/setup-totp" element={<SetupTotp />} />
               <Route path="/" element={
                 <ProtectedRoute>
                   <Layout />
