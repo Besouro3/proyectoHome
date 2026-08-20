@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { LogIn, Eye, EyeOff, ShieldCheck } from 'lucide-react'
+import { apiFetch } from '../utils/api'
 
 export default function Login() {
   const { login } = useAuth()
@@ -39,13 +40,10 @@ export default function Login() {
 
     setLoading(true)
     try {
-      const res = await fetch('/api/auth/verify-login-totp', {
+      const data = await apiFetch('/verify-login-totp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tempToken: totpState.tempToken, token: totpCode })
       })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
 
       localStorage.setItem('rrhh_session', JSON.stringify(data.user))
       navigate('/')

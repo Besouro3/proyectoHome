@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { MailCheck, RotateCcw } from 'lucide-react'
-
-const API = '/api/auth'
+import { apiFetch } from '../utils/api'
 
 export default function ConfirmEmail() {
   const navigate = useNavigate()
@@ -56,13 +55,10 @@ export default function ConfirmEmail() {
 
     setLoading(true)
     try {
-      const res = await fetch(`${API}/confirm-email`, {
+      await apiFetch('/confirm-email', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, code: fullCode })
       })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
 
       setSuccess(true)
       setTimeout(() => {
@@ -80,13 +76,10 @@ export default function ConfirmEmail() {
   const handleResend = async () => {
     setResending(true)
     try {
-      const res = await fetch(`${API}/resend-code`, {
+      await apiFetch('/resend-code', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId })
       })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
       setError('')
       setCode(['', '', '', '', '', ''])
       inputRefs.current[0]?.focus()

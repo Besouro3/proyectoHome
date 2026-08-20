@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { ShieldCheck, Smartphone, CheckCircle } from 'lucide-react'
-
-const API = '/api/auth'
+import { apiFetch } from '../utils/api'
 
 export default function SetupTotp() {
   const navigate = useNavigate()
@@ -28,21 +27,15 @@ export default function SetupTotp() {
 
   const setupTotp = async () => {
     try {
-      const setupRes = await fetch(`${API}/setup-totp`, {
+      await apiFetch('/setup-totp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId })
       })
-      const setupData = await setupRes.json()
-      if (!setupRes.ok) throw new Error(setupData.error)
 
-      const qrRes = await fetch(`${API}/qr-code`, {
+      const qrData = await apiFetch('/qr-code', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId })
       })
-      const qrData = await qrRes.json()
-      if (!qrRes.ok) throw new Error(qrData.error)
 
       setQrCode(qrData.qrCode)
       setSecret(qrData.secret)
@@ -62,13 +55,10 @@ export default function SetupTotp() {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch(`${API}/verify-totp`, {
+      const data = await apiFetch('/verify-totp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, token })
       })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
 
       setLoginData(data)
       setStep('success')

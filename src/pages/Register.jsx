@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { UserPlus, Eye, EyeOff, Mail, Lock, User } from 'lucide-react'
-
-const API = '/api/auth'
+import { apiFetch } from '../utils/api'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -39,15 +38,10 @@ export default function Register() {
 
     setLoading(true)
     try {
-      const res = await fetch(`${API}/register`, {
+      const data = await apiFetch('/register', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nombre: form.nombre, email: form.email, password: form.password })
       })
-      const data = await res.json()
-
-      if (!res.ok) throw new Error(data.error)
-
       navigate('/confirm-email', { state: { userId: data.userId, email: data.email } })
     } catch (err) {
       setError(err.message)
