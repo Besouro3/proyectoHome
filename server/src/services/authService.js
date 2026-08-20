@@ -172,20 +172,17 @@ export const authService = {
       return { requiresEmailConfirmation: true, userId: user.id, email: user.email }
     }
 
-    if (user.totp_enabled) {
-      const tempToken = jwt.sign(
-        { id: user.id, purpose: 'totp-verify' },
-        JWT_SECRET,
-        { expiresIn: '5m' }
-      )
-      return { requiresTotp: true, tempToken, userId: user.id }
+    const tempToken = jwt.sign(
+      { id: user.id, purpose: 'totp-verify' },
+      JWT_SECRET,
+      { expiresIn: '5m' }
+    )
+
+    if (!user.totp_enabled) {
+      return { requiresTotpSetup: true, tempToken, userId: user.id }
     }
 
-    const token = createToken(user)
-    return {
-      token,
-      user: { id: user.id, nombre: user.nombre, email: user.email, rol: user.rol, sede: user.sede }
-    }
+    return { requiresTotp: true, tempToken, userId: user.id }
   },
 
   verifyLoginTotp({ tempToken, token }) {

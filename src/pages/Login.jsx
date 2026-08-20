@@ -27,6 +27,8 @@ export default function Login() {
       navigate('/')
     } else if (result.requiresEmailConfirmation) {
       navigate('/confirm-email', { state: { userId: result.userId, email: result.email } })
+    } else if (result.requiresTotpSetup) {
+      navigate('/setup-totp', { state: { userId: result.userId, email } })
     } else if (result.requiresTotp) {
       setTotpState(result)
     } else {

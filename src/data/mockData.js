@@ -111,16 +111,32 @@ export const capacitaciones = [
 ]
 
 export const sindicalizados = [
-  { id: 1, nombre: 'Ana García', cargo: 'Cajera', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 3, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] },
-  { id: 2, nombre: 'Carlos Ruiz', cargo: 'Bodeguero', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] },
-  { id: 3, nombre: 'María López', cargo: 'Supervisora', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 5, cuotaMensual: 65, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días', 'Capacitación externa'] },
-  { id: 4, nombre: 'Pedro Sánchez', cargo: 'Vendedor', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 2, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña'] },
-  { id: 5, nombre: 'Laura Martínez', cargo: 'Cajera', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 3, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] },
-  { id: 6, nombre: 'Roberto Díaz', cargo: 'Gerente Tienda', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 6, cuotaMensual: 80, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días', 'Capacitación externa', 'Plan de jubilación'] },
-  { id: 7, nombre: 'Sofía Torres', cargo: 'Vendedora', sede: 'Av. Libertador 789', sindicato: 'SITRAD', antiguedad: 2, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña'] },
-  { id: 8, nombre: 'Miguel Herrera', cargo: 'Bodeguero', sede: 'Av. Libertador 789', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] },
-  { id: 9, nombre: 'Oscar Jiménez', cargo: 'Cajero', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] },
-  { id: 10, nombre: 'Patricia Romero', cargo: 'Supervisora', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 60, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'] }
+  { id: 1, nombre: 'Ana García', cargo: 'Cajera', departamento: 'Caja', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 3, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2022-03-15', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.2 },
+  { id: 2, nombre: 'Carlos Ruiz', cargo: 'Bodeguero', departamento: 'Bodega', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2021-07-20', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 1, evaluaciones: 3.8 },
+  { id: 3, nombre: 'María López', cargo: 'Supervisora', departamento: 'Administración', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 5, cuotaMensual: 65, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días', 'Capacitación externa'], fechaIngreso: '2020-01-10', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.8 },
+  { id: 4, nombre: 'Pedro Sánchez', cargo: 'Vendedor', departamento: 'Ventas', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 2, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña'], fechaIngreso: '2023-06-01', tipoContrato: 'Temporal', estado: 'Activo', reclamaciones: 0, evaluaciones: 3.2 },
+  { id: 5, nombre: 'Laura Martínez', cargo: 'Cajera', departamento: 'Caja', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 3, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2022-09-12', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.0 },
+  { id: 6, nombre: 'Roberto Díaz', cargo: 'Gerente Tienda', departamento: 'Administración', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 6, cuotaMensual: 80, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días', 'Capacitación externa', 'Plan de jubilación'], fechaIngreso: '2019-04-05', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.5 },
+  { id: 7, nombre: 'Sofía Torres', cargo: 'Vendedora', departamento: 'Ventas', sede: 'Av. Libertador 789', sindicato: 'SITRAD', antiguedad: 2, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña'], fechaIngreso: '2023-02-18', tipoContrato: 'Temporal', estado: 'Activo', reclamaciones: 0, evaluaciones: 3.5 },
+  { id: 8, nombre: 'Miguel Herrera', cargo: 'Bodeguero', departamento: 'Bodega', sede: 'Av. Libertador 789', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2021-11-30', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.0 },
+  { id: 9, nombre: 'Oscar Jiménez', cargo: 'Cajero', departamento: 'Caja', sede: 'Calle Norte 456', sindicato: 'SINDICAL', antiguedad: 4, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2021-10-25', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 3.9 },
+  { id: 10, nombre: 'Patricia Romero', cargo: 'Supervisora', departamento: 'Administración', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 4, cuotaMensual: 60, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2021-06-18', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.4 },
+  { id: 11, nombre: 'Daniela Rojas', cargo: 'Vendedora', departamento: 'Ventas', sede: 'Av. Principal 123', sindicato: 'SITRAD', antiguedad: 2, cuotaMensual: 45, beneficios: ['Seguro médico', 'Bonificación navideña'], fechaIngreso: '2023-04-15', tipoContrato: 'Temporal', estado: 'Activo', reclamaciones: 1, evaluaciones: 3.0 },
+  { id: 12, nombre: 'Marcos Aguilar', cargo: 'Bodeguero', departamento: 'Bodega', sede: 'Av. Libertador 789', sindicato: 'SINDICAL', antiguedad: 3, cuotaMensual: 50, beneficios: ['Seguro médico', 'Bonificación navideña', 'Vacaciones +5 días'], fechaIngreso: '2022-02-28', tipoContrato: 'Indefinido', estado: 'Activo', reclamaciones: 0, evaluaciones: 4.0 }
+]
+
+export const acuerdosColectivos = [
+  { id: 1, sindicato: 'SITRAD', titulo: 'Reajuste Salarial 2024', fechaInicio: '2024-01-01', fechaFin: '2024-12-31', estado: 'Vigente', descripcion: 'Aumento del 5% para todos los afiliados', montoImpacto: 12500 },
+  { id: 2, sindicato: 'SINDICAL', titulo: 'Mejora Condiciones Bodega', fechaInicio: '2024-03-01', fechaFin: '2025-02-28', estado: 'Vigente', descripcion: 'Equipos de protección personal adicionales', montoImpacto: 3200 },
+  { id: 3, sindicato: 'SITRAD', titulo: 'Capacitación Externa', fechaInicio: '2024-06-01', fechaFin: '2024-11-30', estado: 'Finalizado', descripcion: 'Programa de capacitación en ventas', montoImpacto: 8000 }
+]
+
+export const gestionesSindicato = [
+  { id: 1, fecha: '2024-11-15', sindicato: 'SITRAD', tipo: 'Reclamación', empleado: 'Carlos Ruiz', descripcion: 'Solicitud de revisión de carga de trabajo en bodega', estado: 'Resuelto', fechaResolucion: '2024-11-25' },
+  { id: 2, fecha: '2024-12-01', sindicato: 'SINDICAL', tipo: 'Negociación', empleado: null, descripcion: 'Revisión de tabla salarial para 2025', estado: 'En proceso', fechaResolucion: null },
+  { id: 3, fecha: '2024-10-20', sindicato: 'SITRAD', tipo: 'Capacitación', empleado: null, descripcion: 'Solicitud de curso de seguridad industrial', estado: 'Aprobado', fechaResolucion: '2024-11-05' },
+  { id: 4, fecha: '2024-12-05', sindicato: 'SINDICAL', tipo: 'Reclamación', empleado: 'Daniela Rojas', descripcion: 'Horas extras no pagadas octubre', estado: 'En proceso', fechaResolucion: null },
+  { id: 5, fecha: '2024-09-10', sindicato: 'SITRAD', tipo: 'Beneficio', empleado: null, descripcion: 'Ampliación de seguro médico a familiares', estado: 'Aprobado', fechaResolucion: '2024-10-01' }
 ]
 
 export const sstData = {

@@ -31,6 +31,10 @@ export function AuthProvider({ children }) {
         return { success: false, requiresTotp: true, tempToken: data.tempToken, userId: data.userId }
       }
 
+      if (data.requiresTotpSetup) {
+        return { success: false, requiresTotpSetup: true, tempToken: data.tempToken, userId: data.userId }
+      }
+
       setUser(data.user)
       localStorage.setItem('rrhh_session', JSON.stringify(data.user))
       return { success: true }
